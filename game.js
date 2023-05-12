@@ -70,5 +70,51 @@ document.getElementById("lawyer-2-button").addEventListener("click", buyLawyerTi
 // Call function to generate papers for tier 1 lawyers
 generatePapersPerSecond();
 
-//AutoClicker detection
+//Random events
+
+// Global variable to store the number of papers
+let papers = 0;
+
+// Add a click event listener to the button
+document.getElementById("paper-button").addEventListener("click", function() {
+  // Play a clicking sound effect
+  let audio = new Audio("click_sound.mp3");
+  audio.play();
+  
+  // Increment the papers count
+  papers++;
+  
+  // Update the papers display
+  document.getElementById("paper-count").textContent = papers;
+});
+
+// Randomly deduct papers every 10 to 20 minutes
+setInterval(function() {
+  // Generate a random time interval between 10 to 20 minutes
+  let interval = Math.floor(Math.random() * (20 - 10 + 1)) + 10;
+  
+  // Generate a random number of papers to deduct between 10 to 500
+  let deduction = Math.floor(Math.random() * (500 - 10 + 1)) + 10;
+  
+  // Deduct the papers from the total count
+  papers -= deduction;
+  
+  // If the papers count becomes negative, set it to 0
+  if (papers < 0) {
+    papers = 0;
+  }
+  
+  // Update the papers display
+  document.getElementById("paper-count").textContent = papers;
+  
+  // Show the "You lost" message
+  let message = document.createElement("p");
+  message.textContent = "You lost!";
+  document.body.appendChild(message);
+  
+  // Remove the message after 5 seconds
+  setTimeout(function() {
+    document.body.removeChild(message);
+  }, 5000);
+}, interval * 60 * 1000); // Convert the interval to milliseconds
 
