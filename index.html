@@ -15,6 +15,21 @@
         <div class="info-container">
           <p>You have <span id="num-papers">0</span> papers.</p>
           <button id="paper-button">Click Me!</button>
+
+<audio id="click-sound">
+  <source src="Audio/Clicking.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const button = document.getElementById('paper-button');
+  const sound = document.getElementById('click-sound');
+
+  button.addEventListener('click', () => {
+    sound.currentTime = 0;
+    sound.play();
+  });
+</script>
+
         </div>
       </section>
       <section id="lawyer-section-1">
@@ -36,7 +51,7 @@
       <section id="updates-section">
         <h2>Updates</h2>
         <ul id="updates-list">
-          <li>------- Version 0.4 May 11, 2023</li>
+          <li>------- Version 0.4.5 May 11, 2023</li>
           <li>Update 3: Bug fixes for Disvorce Clicker - May 11, 2023</li>
           <li>Update 3: Added price multiplier eachtime you buy a lawyer - May 11, 2023</li>
           <li>Update 3: minor changes - May 11, 2023</li>

@@ -72,14 +72,3 @@ generatePapersPerSecond();
 
 //AutoClicker detection
 
-let clickCooldown = false;
-
-function onClick() {
-  if (!clickCooldown) {
-    // Perform click action here
-    clickCooldown = true;
-    setTimeout(function() {
-      clickCooldown = false;
-    }, 10000); // Set cooldown time to 10 second (10000 milliseconds)
-  }
-}
