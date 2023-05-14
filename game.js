@@ -26,14 +26,14 @@ function updateLawyersTier2(num) { // Added this function
 function updatePPS() {
   papersPerSecond = numLawyers + numLawyersTier2 * 4;
   document.getElementById("papers-per-second-1").innerHTML = numLawyers;
-  document.getElementById("papers-per-second-2").innerHTML = numLawyersTier2 * 25;
+  document.getElementById("papers-per-second-2").innerHTML = numLawyersTier2 * 45;
 }
 
 function buyLawyer() {
   if (numPapers >= lawyerCost) {
     updatePapers(-lawyerCost);
     updateLawyers(1);
-    lawyerCost *= 2; // Increase the cost
+    lawyerCost *= lawyerCostMultiplier; // multiply the cost by the multiplier
     document.getElementById("lawyer-1-button").innerHTML = "Buy Lawyer Tier 1 - " + lawyerCost + " Papers"; // Update the button text
     updatePPS();
   }
@@ -44,9 +44,9 @@ function buyLawyerTier2() {
     updatePapers(-lawyerTier2Cost);
     updateLawyersTier2(1); // Updated to use updateLawyersTier2()
     setInterval(function() {
-      updatePapers(25);
+      updatePapers(45);
     }, Math.floor(Math.random() * 5 + 4) * 1000); // Generates a random number between 4-8 seconds and multiplies it by 1000 to convert to milliseconds
-    lawyerTier2Cost *= 1; // Update the cost of Lawyer Tier 2 to be 3 times the previous cost
+    lawyerTier2Cost *= 2; // Update the cost of Lawyer Tier 2 to be 2 times the previous cost
     document.getElementById("lawyer-2-button").innerHTML = "Buy Lawyer Tier 2 - " + lawyerTier2Cost + " Papers"; // Update the button text to display the new cost
     updatePPS();
   }
@@ -117,4 +117,5 @@ setInterval(function() {
     document.body.removeChild(message);
   }, 5000);
 }, interval * 60 * 1000); // Convert the interval to milliseconds
+
 

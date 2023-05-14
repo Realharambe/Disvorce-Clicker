@@ -17,19 +17,19 @@
           <button id="paper-button">Click Me!</button>
 
 
-<audio id="click-sound">
-  <source src="Audio/Clicking.mp3" type="audio/mpeg">
-</audio>
+          <audio id="click-sound">
+            <source src="Audio/Clicking.mp3" type="audio/mpeg">
+          </audio>
 
-<script>
-  const button = document.getElementById('paper-button');
-  const sound = document.getElementById('click-sound');
+          <script>
+            const button = document.getElementById('paper-button');
+            const sound = document.getElementById('click-sound');
 
-  button.addEventListener('click', () => {
-    sound.currentTime = 0;
-    sound.play();
-  });
-</script>
+            button.addEventListener('click', () => {
+              sound.currentTime = 0;
+              sound.play();
+            });
+          </script>
 
         </div>
       </section>
@@ -52,16 +52,42 @@
       <section id="updates-section">
         <h2>Updates</h2>
         <ul id="updates-list">
-          <li>------- Version 0.5.3 May 11, 2023</li>
-          <li>Update 4: Added random events + started working on a prestiege system - May 12, 2023</li>
-          <li>Update 4: Had to remove a feature I was working on - May 12, 2023</li>
-          <li>Update 4: nothing much More - May 12, 2023</li>
+          <li>------- Version 0.6.0 May 13, 2023</li>
+          <li>Update 5: Added prestige system - May 13, 2023</li>
+          <li>Update 5: tryed adding changable styles - May 13, 2023</li>
+          <li>Update 5: nothing much More - May 13, 2023</li>
           <li>----Later Updates----
-          <li>Update 5: More stuff currently undecided on what will be in this update other than a few minor visiual changes - May 14, 2023</li>
+          <li>Update 6: More stuff currently undecided on what will be in this update other than a few minor visiual changes - May 14, 2023</li>
         </ul>
       </section>          
-    </main>
-    <script src="game.js"></script>
-  </body>
-</html>
 
+      <section id="prestige-section">
+        <h2>Prestige</h2>
+        <p>You can prestige once you have:</p>
+        <ul>
+          <li>20 Lawyer Tier 1's</li>
+          <li>20 Lawyer Tier 2's</li>
+          <li>$50,000</li>
+        </ul>
+        <button id="prestige-button">Prestige</button>
+        <p>Current Prestige Points: <span id="prestige-points">0</span></p>
+        <h3>Permanent Upgrades</h3>
+        <ul id="permanent-upgrades-list">
+          <!-- Permanent upgrades will be added here dynamically -->
+        </ul>
+      </section>
+      
+        <script src="game.js"></script>
+          </body>
+        </html>
+
+        <div class="modern">
+          <!-- Content goes here -->
+        </div>
+        
+        <div class="vintage">
+          <!-- Content goes here -->
+        </div>
+        
+        
+       
