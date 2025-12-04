@@ -1,13 +1,13 @@
-// Define variables
-let numPapers = 0; // How much papers you have when you start
-let numLawyers = 0; // How much lawyers you have when you start
-let numLawyersTier2 = 0; // Added this variable
-let lawyerCost = 10; // Tier 1 cost
-let lawyerTier2Cost = 2500; // The cost of tier 2
-let papersPerSecond = 0; // How much you make per second
-let lawyerCostMultiplier = 2; // Added this variable
 
-// Define functions
+let numPapers = 0; 
+let numLawyers = 0; 
+let numLawyersTier2 = 0; 
+let lawyerCost = 10; 
+let lawyerTier2Cost = 2500; 
+let papersPerSecond = 0; 
+let lawyerCostMultiplier = 2;
+
+
 function updatePapers(num) {
   numPapers += num;
   document.getElementById("num-papers").innerHTML = numPapers;
@@ -18,7 +18,7 @@ function updateLawyers(num) {
   document.getElementById("num-lawyers-1").innerHTML = numLawyers;
 }
 
-function updateLawyersTier2(num) { // Added this function
+function updateLawyersTier2(num) { 
   numLawyersTier2 += num;
   document.getElementById("num-lawyers-2").innerHTML = numLawyersTier2;
 }
@@ -33,8 +33,8 @@ function buyLawyer() {
   if (numPapers >= lawyerCost) {
     updatePapers(-lawyerCost);
     updateLawyers(1);
-    lawyerCost *= lawyerCostMultiplier; // multiply the cost by the multiplier
-    document.getElementById("lawyer-1-button").innerHTML = "Buy Lawyer Tier 1 - " + lawyerCost + " Papers"; // Update the button text
+    lawyerCost *= lawyerCostMultiplier; 
+    document.getElementById("lawyer-1-button").innerHTML = "Buy Lawyer Tier 1 - " + lawyerCost + " Papers";
     updatePPS();
   }
 }
@@ -42,12 +42,12 @@ function buyLawyer() {
 function buyLawyerTier2() {
   if (numPapers >= lawyerTier2Cost) {
     updatePapers(-lawyerTier2Cost);
-    updateLawyersTier2(1); // Updated to use updateLawyersTier2()
+    updateLawyersTier2(1); 
     setInterval(function() {
       updatePapers(45);
-    }, Math.floor(Math.random() * 5 + 4) * 1000); // Generates a random number between 4-8 seconds and multiplies it by 1000 to convert to milliseconds
-    lawyerTier2Cost *= 2; // Update the cost of Lawyer Tier 2 to be 2 times the previous cost
-    document.getElementById("lawyer-2-button").innerHTML = "Buy Lawyer Tier 2 - " + lawyerTier2Cost + " Papers"; // Update the button text to display the new cost
+    }, Math.floor(Math.random() * 5 + 4) * 1000); 
+    lawyerTier2Cost *= 2; 
+    document.getElementById("lawyer-2-button").innerHTML = "Buy Lawyer Tier 2 - " + lawyerTier2Cost + " Papers"; 
     updatePPS();
   }
 }
