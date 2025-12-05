@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>Divorce Clicker</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header>
@@ -15,17 +15,22 @@
         <div class="info-container">
           <p>You have <span id="num-papers">0</span> papers.</p>
           <button id="paper-button">Click Me!</button>
+
+
           <audio id="click-sound">
-            <source src="Audio/Clicking.mp3" type="audio/mpeg" />
+            <source src="Audio/Clicking.mp3" type="audio/mpeg">
           </audio>
+
           <script>
             const button = document.getElementById('paper-button');
             const sound = document.getElementById('click-sound');
+
             button.addEventListener('click', () => {
               sound.currentTime = 0;
               sound.play();
             });
           </script>
+
         </div>
       </section>
       <section id="lawyer-section-1">
@@ -47,16 +52,22 @@
       <section id="updates-section">
         <h2>Updates</h2>
         <ul id="updates-list">
-          <li>------- Version 0.6.0 Oct. 4, 2025</li>
-          <li>Announcement: This game is no longer active as it hasn't had any updates for the past 2 1/2 years, so don't expect any changes. Side note: don't prestige, it doesn't work.</li>
-          <li></li>
-          <li></li>
-          <li>----Later Updates----</li>
-          <li>Update 6: More stuff currently undecided on what will be in this update other than a few minor visual changes - May 14, 2023</li>
+          <li>------- Version 0.6.0 May 13, 2023</li>
+          <li>Update 5: Added prestige system - May 13, 2023</li>
+          <li>Update 5: tryed adding changable styles - May 13, 2023</li>
+          <li>Update 5: nothing much More - May 13, 2023</li>
+          <li>----Later Updates----
+          <li>Update 6: More stuff currently undecided on what will be in this update other than a few minor visiual changes - May 14, 2023</li>
         </ul>
       </section>
-    </main>
-  </body>
-</html>
+      
+        <script src="game.js"></script>
+          </body>
+        </html>
+
+        <div class="modern">
+        </div>
         
-       
+        <div class="vintage">
+        </div>
+        
